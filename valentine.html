@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine – Aakash ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    padding: 30px 15px;
+}
+
+h1, h2 {
+    margin-bottom: 12px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    padding: 22px;
+    margin: 20px auto;
+    max-width: 520px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.yes {
+    background-color: #ff3366;
+    color: white;
+}
+
+.no {
+    background-color: #fff;
+    color: #ff3366;
+    position: relative;
+}
+
+footer {
+    margin-top: 45px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+</style>
+</head>
+
+<body onclick="startMusic()">
+
+<!-- Hidden YouTube background music -->
+<iframe id="bgMusic"
+    src=""
+    style="display:none;"
+    allow="autoplay">
+</iframe>
+
+<div class="container">
+    <!-- <h1>❤️ Happy Valentine’s Week ❤️</h1> -->
+    <h2>For My Husband, <strong>Aakash</strong></h2>
+
+    <div class="card">
+        <div class="message">
+            From the first rose to the last kiss,<br><br>
+
+            Every day of this Valentine week feels like it belongs to you.<br>
+            You are my proposal, my promise, my comfort, my sweetest habit.<br><br>
+
+            You are the hug I need after a long day,  
+            the smile I look for without realizing,  
+            and the love I never want to live without.<br><br>
+
+            Loving you isn’t something I do —  
+            it’s who I am.
+        </div>
+    </div>
+
+    <h2>💍 Aakash, will you be my Valentine? 💍</h2>
+
+    <div class="buttons">
+        <button class="yes" onclick="yesClicked()">YES 💖</button>
+        <button class="no" onmouseover="moveNo()">NO 😜</button>
+    </div>
+
+    <!-- <footer> -->
+        <!-- (Tap anywhere to play our song 🎶)<br> -->
+        <!-- Made with endless love ❤️ -->
+    <!-- </footer> -->
+</div>
+
+<script>
+let musicStarted = false;
+
+function startMusic() {
+    if (!musicStarted) {
+        document.getElementById("bgMusic").src =
+        "https://www.youtube.com/embed/PIpE4Q8Yp54?autoplay=1&loop=1&playlist=PIpE4Q8Yp54";
+        musicStarted = true;
+    }
+}
+
+function yesClicked() {
+    document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            background:linear-gradient(to bottom right, #000000, #2c5364);
+            color:white;
+            font-family:'Segoe UI', sans-serif;
+            padding:30px;
+        ">
+            <div>
+                <h1 style="font-size:32px;">❤️ Yayyyy!! it’s a YES ❤️</h1>
+                <p style="font-size:18px; line-height:1.7; margin-top:20px;">
+                    And just like that,<br>
+                    my heart chose you again.<br><br>
+
+                    Thank you for being my forever,<br>
+                    my home, my always — Kaashu.<br><br>
+
+                    Now come here… your Valentine is waiting 💋
+                </p>
+            </div>
+        </div>
+    `;
+}
+
+function moveNo() {
+    const noBtn = document.querySelector('.no');
+    const x = Math.random() * 220 - 110;
+    const y = Math.random() * 220 - 110;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+
+</body>
+</html>
